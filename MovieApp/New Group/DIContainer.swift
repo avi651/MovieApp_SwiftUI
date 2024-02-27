@@ -11,10 +11,10 @@ class DIContainer {
     static let shared = DIContainer()
     private init() {}
 
-    private let repositoryPopularMovieProtocolObj: RepositoryProtocol = MovieRepositoryImpl()
-
-    lazy var movieRepositoryUseCase: RepositoryPopularMovieUseCaseProtocol = {
-        return MovieRepositoryUseCaseImpl(dataSource: repositoryPopularMovieProtocolObj)
+    private let repositoryPopularMovieProtocolObj: PopularMovieProtocol = MovieRepositoryImpl()
+    
+    lazy var repositoryUseCase: RepositoryUseCaseProtocol = {
+        return PopularMovieUseCaseImpl(dataSource: repositoryPopularMovieProtocolObj)
     }()
 }
 

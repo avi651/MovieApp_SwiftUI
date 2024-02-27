@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol RepositoryProtocol {
+protocol PopularMovieProtocol {
     func getPopularMovieData(from url: URL) -> AnyPublisher<MovieResult, Error>
 }
 

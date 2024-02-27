@@ -11,15 +11,15 @@ import Combine
 class PopularMovieViewModel: ObservableObject {
     @Published var data: MovieResult?
     private var cancellables = Set<AnyCancellable>()
-    private let dataUseCase: MovieRepositoryUseCaseImpl
+    private let dataUseCase: RepositoryUseCaseProtocol
     
-    init(dataUseCase: MovieRepositoryUseCaseImpl) {
+    init(dataUseCase: RepositoryUseCaseProtocol) {
         self.dataUseCase = dataUseCase
         fetchPopularMovieData()
     }
     
     func fetchPopularMovieData() {
-        dataUseCase.fetchPopularMovieData(with: PopularMovieResquestModel(popularMovieName: "/popular"))
+        dataUseCase.fetchPopularMovieData(with: PopularMovieResquestModel(popularMovieName: "popular"))
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 // Handle completion if needed

@@ -57,3 +57,11 @@ struct Movie: Codable, Identifiable {
     }
 }
 
+
+extension Movie {
+    static let dummyData: [Movie] = [
+        Movie(adult: false, backDropPath: "Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.", id: 969492, originalLanguage: "2022-05-04", originalTitle: "Doctor Strange in the Multiverse of Madness", overview: "", popularity: 7.5, posterPath: "/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg", releaseDate: "2024-01-25", title: "Land of Bad", video: false, voteAverage: 7.162,voteCount:100),
+        Movie(adult: false, backDropPath: "Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.", id: 969492, originalLanguage: "2022-05-04", originalTitle: "Doctor Strange in the Multiverse of Madness", overview: "", popularity: 7.5, posterPath: "/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg", releaseDate: "2024-01-25", title: "Land of Bad", video: false, voteAverage: 7.162,voteCount:100),
+        Movie(adult: false, backDropPath: "Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.", id: 969492, originalLanguage: "2022-05-04", originalTitle: "Doctor Strange in the Multiverse of Madness", overview: "", popularity: 7.5, posterPath: "/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg", releaseDate: "2024-01-25", title: "Land of Bad", video: false, voteAverage: 7.162,voteCount:100),
+    ]
+}

@@ -8,7 +8,8 @@
 import Foundation
 import Combine
 
-protocol RepositoryPopularMovieUseCaseProtocol {
+protocol RepositoryUseCaseProtocol {
+    //func fetchPopularMovieData(with request: PopularMovieResquestModel) -> AnyPublisher<MovieResult, Error>
     func fetchPopularMovieData(with request: PopularMovieResquestModel) -> AnyPublisher<MovieResult, Error>
 }
 

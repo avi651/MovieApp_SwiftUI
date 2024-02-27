@@ -11,19 +11,18 @@ struct PopularMovieListCell: View {
     
     var popularMovieText: String?
     var popularMovieImage: String?
-    var popularMovieDetailText: String?
+    var rating: CGFloat?
+    
     var body: some View {
         HStack(spacing: 12){
-            KingFisherNetworkImage(frame: 80, url: popularMovieImage ?? "")
-            VStack(spacing: 10) {
+            KingFisherNetworkImage(frame: 100, url: popularMovieImage ?? "")
+            VStack(alignment: .leading, spacing: 12) {
                 Text(popularMovieText ?? "")
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.black)
-                Text(popularMovieDetailText ?? "")
-                    .font(.system(size: 16, weight: .light))
-                    .foregroundColor(.black)
+                RatingView(rating: rating ?? 0.0, maxRating: 10)
             }
-        } .padding(.bottom, 40)
+        }
     }
 }
 

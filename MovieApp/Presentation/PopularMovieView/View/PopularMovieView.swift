@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct PopularMovieView: View {
-    @StateObject private var popularMovieView = PopularMovieViewModel(dataUseCase: DIContainer.shared.movieRepositoryUseCase as! MovieRepositoryUseCaseImpl)
+    
+    @StateObject private var popularMovieView = PopularMovieViewModel(dataUseCase: DIContainer.shared.repositoryUseCase)
     
     var body: some View {
         NavigationView{
@@ -17,7 +18,9 @@ struct PopularMovieView: View {
                     List {
                         Section(header: Text("Popular Movies")){
                             ForEach(data.results) { movie in
-                                PopularMovieListCell(popularMovieText: movie.title,popularMovieImage: "https://image.tmdb.org/t/p/w500\(movie.posterPath)", popularMovieDetailText: movie.originalTitle)
+                                NavigationLink(destination:PopularMovieDetails(movie: movie)){
+                                    PopularMovieListCell(popularMovieText: movie.title,popularMovieImage: "https://image.tmdb.org/t/p/w500\(movie.posterPath)", rating: movie.voteAverage)
+                                }
                             }
                         }
                     }.navigationTitle("Popular Movies").onAppear() {}

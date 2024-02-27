@@ -2,21 +2,21 @@
 //  MovieRepositoryUseCaseImpl.swift
 //  MovieApp
 //
-//  Created by Avinash on 26/02/24.
+//  Created by Avinash on 27/02/24.
 //
 
 import Foundation
 import Combine
 
-struct MovieRepositoryUseCaseImpl: RepositoryPopularMovieUseCaseProtocol {
+struct PopularMovieUseCaseImpl: RepositoryUseCaseProtocol {
     
-    private let dataSource: RepositoryProtocol
+    private let dataSource: PopularMovieProtocol
     
-    init(dataSource: RepositoryProtocol) {
+    init(dataSource: PopularMovieProtocol) {
         self.dataSource = dataSource
     }
     
-    internal func fetchPopularMovieData(with request: PopularMovieResquestModel) -> AnyPublisher<MovieResult, Error> {
+    func fetchPopularMovieData(with request: PopularMovieResquestModel) -> AnyPublisher<MovieResult, Error> {
         let baseURL = "\(APIConstant.baseURL)/popular"
         let queryItems = [URLQueryItem(name: "api_key", value: APIConstant.apiKey),
                           URLQueryItem(name: "language", value: APIConstant.languageLocale),
